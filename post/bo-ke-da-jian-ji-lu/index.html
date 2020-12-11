@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>😄 | a melancholy hill</title>
+<title>博客搭建记录 | a melancholy hill</title>
 
 <link rel="shortcut icon" href="https://courir28.github.io/favicon.ico?v=1607707668900">
 
@@ -89,25 +89,180 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    😄
+                    博客搭建记录
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2019-01-25 ·
+                        · 2019-12-25 ·
                     </time>
                     
                 </div>
                 <div class="post-content">
-                    <p>Make your own unique messes, and the work your own way out of them.</p>
+                    <h1 id="hugo">Hugo</h1>
+<ol>
+<li>
+<p>安装<a href="https://git-scm.com/">Git</a>和<a href="https://golang.org/dl/">Go</a></p>
+</li>
+<li>
+<p>安装<a href="https://github.com/gohugoio/hugo/releases">Hugo</a></p>
+<p>注：有些主题需要安装extended版本。</p>
+<p>下载解压Hugo，将hugo添加到环境变量中，添加完成后打开Git Bash输入</p>
+<pre><code>hugo version
+</code></pre>
+<p>检查是否安装成功。</p>
+</li>
+<li>
+<p>生成博客文件夹</p>
+<p>打开Git Bash输入</p>
+<pre><code>hugo new site &quot;文件夹名称&quot;
+</code></pre>
+</li>
+<li>
+<p>主题</p>
+<p>Git clone/下载主题文件（<a href="https://themes.gohugo.io/">官网主题</a>）至themes文件夹中。</p>
+</li>
+<li>
+<p>配置</p>
+<p>修改博客文件夹中的config.toml文件或者从themes/主题名/exampleSite文件夹中复制config.toml文件。</p>
+</li>
+<li>
+<p>渲染</p>
+<p>打开Git Bash输入</p>
+<pre><code>hugo server
+</code></pre>
+</li>
+<li>
+<p>托管至Github</p>
+<p>建立xxx.github.io仓库，修改博客配置文件，修改baseURL为仓库地址，添加行publishDir= &quot;docs&quot;，打开Git Bash输入hugo，然后：</p>
+<pre><code>cd docs
+git init
+git remote add origin  https://github.com/xxxxx/xxxx.github.io.git
+git add .
+git commit -m &quot;first commit&quot;
+git pull orgin master
+git push -u origin master
+</code></pre>
+<p>在Github仓库的settings中将Github Pages source改成docs</p>
+<p>参考：</p>
+<p><a href="https://sspai.com/post/59904">浅谈我为什么从 HEXO 迁移到 HUGO</a></p>
+<p>[Hugo+github搭建个人博客（windows10）</p>
+</li>
+</ol>
+<h1 id="hexo">Hexo</h1>
+<ol>
+<li>
+<p>创建GitHub Pages仓库</p>
+<p>新建仓库，username.github.io，勾选Initialize this repository with a README</p>
+</li>
+<li>
+<p>Hexo安装<br>
+按照官方文档</p>
+</li>
+<li>
+<p>建站</p>
+<p>克隆博客仓库到本地，cd到仓库文件夹并依次执行以下命令：</p>
+<pre><code>$ hexo init
+$ npm install
+$ hexo g
+$ hexo s
+</code></pre>
+<p>这样搭建好了本地博客，浏览器输入localhost:4000查看。</p>
+</li>
+<li>
+<p>部署博客到GitHub上</p>
+<p>安装hexo-deployer-git</p>
+<pre><code>$ npm  install hexo-deployer-git --save  
+</code></pre>
+<p>修改博客文件夹内的_config.yml文件</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+type: git
+repository: git@github.com:username/username.github.io.git
+branch: master
+</code></pre>
+<p>然后</p>
+<pre><code>$ hexo d
+</code></pre>
+</li>
+<li>
+<p>备份博客</p>
+<p>创建新的分支</p>
+<pre><code>$ git  checkout -b hexo(new branch name)  
+</code></pre>
+<p>(注：博客根目录.gitignore文件为不需要备份的文件)</p>
+<pre><code>$ git add .
+$ git commit -m &quot;backup&quot;
+$ git push origin hexo
+</code></pre>
+<p>将hexo设置为默认分支</p>
+<p><em>git</em> <em>分支相关命令</em></p>
+<p>a. 查看远程分支</p>
+<pre><code> $  git branch -a
+</code></pre>
+<p>b. 查看本地分支</p>
+<pre><code>$ git branch
+</code></pre>
+<p>c. 创建并切换分支</p>
+<pre><code>$ git checkout -b branchname
+</code></pre>
+<p>d. 删除远程分支</p>
+<pre><code>$ git push origin --delete branchname
+</code></pre>
+<p>e. 删除本地分支</p>
+<pre><code>$ git branch -d branchname
+</code></pre>
+<p>f. 同步分支</p>
+<pre><code>$ git fetch
+</code></pre>
+<p>g. 删除远程分支缓存</p>
+<pre><code>$ git remote show origin
+$ git remote prune origin
+</code></pre>
+</li>
+<li>
+<p>恢复博客</p>
+<p>克隆博客（hexo分支）</p>
+<p>克隆下的文件下执行以下命令</p>
+<pre><code>$ npm install hexo-cli
+$ npm install
+$ npm install hexo-deployer-git
+</code></pre>
+</li>
+<li>
+<p>图片显示问题</p>
+<p>hexo-asset-image插件</p>
+<p>安装方法</p>
+<p>1.0.0版</p>
+<pre><code>npm install hexo-asset-image --save
+</code></pre>
+<p>0.0.5版</p>
+<pre><code>npm install https://github.com/xcodebuild/hexo-asset-image.git
+</code></pre>
+<p>两个版本映射关系不同</p>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/dta0502/article/details/90214417">Git远程分支的删除与同步</a></p>
+<p><a href="https://www.jianshu.com/p/2c73593cbeae">使用Hexo和GitHub Pages搭建免费独立博客</a></p>
+<p><a href="https://lrscy.github.io/2018/01/26/Hexo-Github-Backup/">在Github上备份Hexo博客</a></p>
+<p><a href="https://nave.work/Hexo%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0-%E4%BB%8Ecactus%E5%88%B0icarus.html">Hexo主题折腾日记(一) 从cactus到icarus</a></p>
+</li>
+</ol>
 
                 </div>
             </article>
         </div>
 
         
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://courir28.github.io/post/hello-gridea/" class="post-title gt-a-link">
+                    Hello Gridea
+                </a>
+            </div>
+        
 
         
-            <span id="/post/about/" class="leancloud_visitors" data-flag-title="😄">
+            <span id="/post/bo-ke-da-jian-ji-lu/" class="leancloud_visitors" data-flag-title="博客搭建记录">
                 <em class="post-meta-item-text">阅读量 </em>
                 <i class="leancloud-visitors-count">0</i>
             </span>
