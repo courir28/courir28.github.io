@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://courir28.github.io</id>
     <title>a vapour trail</title>
-    <updated>2020-12-12T07:05:17.575Z</updated>
+    <updated>2020-12-12T07:15:24.872Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://courir28.github.io"/>
     <link rel="self" href="https://courir28.github.io/atom.xml"/>
@@ -331,10 +331,20 @@ set /p code=请输入视频格式编号：
 youtube-dl -f %code% %input%
 goto :download
 </code></pre>
-<h1 id=""></h1>
-<!-- more -->
-<p>国外网盘下载<br>
-<a href="https://suufun.com/">速方云</a></p>
+<h1 id="国外网盘下载">国外网盘下载</h1>
+<p><a href="https://suufun.com/">速方云</a></p>
+<h1 id="查找替换">查找替换</h1>
+<ol>
+<li>
+<p>Word中更改双语文档中的中文字体<br>
+<img src="https://courir28.github.io/post-images/1607757034270.png" alt="" loading="lazy"><br>
+<code>[一-龥]</code> 匹配所有中文字符</p>
+</li>
+<li>
+<p>Excel中替换*符号<br>
+<code>~*</code></p>
+</li>
+</ol>
 ]]></content>
     </entry>
 </feed>
