@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://courir28.github.io</id>
     <title>a vapour trail</title>
-    <updated>2020-12-12T06:38:10.596Z</updated>
+    <updated>2020-12-12T06:59:07.500Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://courir28.github.io"/>
     <link rel="self" href="https://courir28.github.io/atom.xml"/>
@@ -257,6 +257,99 @@ $ npm install hexo-deployer-git
 <p><a href="https://nave.work/Hexo%E4%B8%BB%E9%A2%98%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0-%E4%BB%8Ecactus%E5%88%B0icarus.html">Hexo主题折腾日记(一) 从cactus到icarus</a></p>
 </li>
 </ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[🏄‍笔记]]></title>
+        <id>https://courir28.github.io/post/bi-ji/</id>
+        <link href="https://courir28.github.io/post/bi-ji/">
+        </link>
+        <updated>2018-06-19T06:47:55.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="ffmpeg合并视频">ffmpeg合并视频</h1>
+<p>在视频文件所在目录下新建一个文件<font color="#00dddd">filelist.txt</font>，内容如下：</p>
+<pre><code>file '1.mp4'
+file '2.mp4'
+file '3.mp4'
+file '4.mp4'
+file '5.mp4'
+file '6.mp4'
+</code></pre>
+<p>然后执行命令：</p>
+<pre><code>ffmpeg -f concat -i filelist.txt -c copy output.mp4
+</code></pre>
+<p>来源：<br>
+<a href="https://www.cnblogs.com/zifeiy/p/10675266.html">使用ffmpeg合并视频</a><br>
+<br></p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="ffmpeg合并视频">ffmpeg合并视频</h1>
+<p>在视频文件所在目录下新建一个文件<font color="#00dddd">filelist.txt</font>，内容如下：</p>
+<pre><code>file '1.mp4'
+file '2.mp4'
+file '3.mp4'
+file '4.mp4'
+file '5.mp4'
+file '6.mp4'
+</code></pre>
+<p>然后执行命令：</p>
+<pre><code>ffmpeg -f concat -i filelist.txt -c copy output.mp4
+</code></pre>
+<p>来源：<br>
+<a href="https://www.cnblogs.com/zifeiy/p/10675266.html">使用ffmpeg合并视频</a><br>
+<br></p>
+<!-- more -->
+<h1 id="termux使用">termux使用</h1>
+<p>文件夹软连接<br>
+QQ：</p>
+<pre><code>ln -s /data/data/com.termux/files/home/storage/shared/tencent/QQfile_recv
+</code></pre>
+<p>TIM：</p>
+<pre><code>ln -s /data/data/com.termux/files/home/storage/shared/tencent/TIMfile_recv
+</code></pre>
+<p>来源：<br>
+<a href="https://www.sqlsec.com/2018/05/termux.html#toc-heading-1">Termux 高级终端安装使用配置教程</a></p>
+<h1 id="ssh">SSH</h1>
+<p>生成SSH Key：</p>
+<pre><code>ssh-keygen -t rsa -C &quot;emailname@example.com&quot;
+</code></pre>
+<p>（id_rsa.pub文件）</p>
+<p>Git克隆及推送：<br>
+克隆：</p>
+<pre><code>git clone https://
+git clone git@
+</code></pre>
+<p>推送：</p>
+<pre><code>git add .
+git commit -m &quot;your-description&quot;
+git push
+</code></pre>
+<h1 id="gist托管">Gist托管</h1>
+<p><a href="https://10101.io/2018/09/29/Surge_0">利用 Gist 托管 Surge/Surfboard 节点和规则</a></p>
+<h1 id="hexo更新">Hexo更新</h1>
+<pre><code>hexo clean
+hexo g
+hexo d
+</code></pre>
+<h1 id="youtube-dl懒人脚本bat">youtube-dl懒人脚本.bat</h1>
+<pre><code>@echo off
+:start
+set /p dir=请输入保存路径：
+set dir=%dir:/=\%
+pushd %dir%
+if /i not %dir%==%cd% goto :start
+echo 保存路径：%cd%
+:download
+set /p input=请输入视频链接：
+set input=%input:&amp;=^^^&amp;%
+youtube-dl -F %input%
+if errorlevel 1 goto :download
+set /p code=请输入视频格式编号：
+youtube-dl -f %code% %input%
+goto :download
+</code></pre>
+<h1 id=""></h1>
+<!-- more -->
+<p>国外网盘下载<br>
+<a href="https://suufun.com/">速方云</a></p>
 ]]></content>
     </entry>
 </feed>

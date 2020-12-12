@@ -1,10 +1,10 @@
-<html lang="zh">
+<html>
 <head>
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>关于 - a vapour trail</title>
+<title>🏄‍笔记 | a vapour trail</title>
 
 <link rel="shortcut icon" href="https://courir28.github.io/favicon.ico?v=1607756342373">
 
@@ -25,7 +25,7 @@
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
@@ -86,14 +86,101 @@
 </nav>
 
     <div class="post-container">
-        <div class="post-detail">
+        <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
-                <div class="post-content">
+                <h2 class="post-title">
+                    🏄‍笔记
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2018-06-19 ·
+                    </time>
                     
+                </div>
+                <div class="post-content">
+                    <h1 id="ffmpeg合并视频">ffmpeg合并视频</h1>
+<p>在视频文件所在目录下新建一个文件<font color="#00dddd">filelist.txt</font>，内容如下：</p>
+<pre><code>file '1.mp4'
+file '2.mp4'
+file '3.mp4'
+file '4.mp4'
+file '5.mp4'
+file '6.mp4'
+</code></pre>
+<p>然后执行命令：</p>
+<pre><code>ffmpeg -f concat -i filelist.txt -c copy output.mp4
+</code></pre>
+<p>来源：<br>
+<a href="https://www.cnblogs.com/zifeiy/p/10675266.html">使用ffmpeg合并视频</a><br>
+<br></p>
+<!-- more -->
+<h1 id="termux使用">termux使用</h1>
+<p>文件夹软连接<br>
+QQ：</p>
+<pre><code>ln -s /data/data/com.termux/files/home/storage/shared/tencent/QQfile_recv
+</code></pre>
+<p>TIM：</p>
+<pre><code>ln -s /data/data/com.termux/files/home/storage/shared/tencent/TIMfile_recv
+</code></pre>
+<p>来源：<br>
+<a href="https://www.sqlsec.com/2018/05/termux.html#toc-heading-1">Termux 高级终端安装使用配置教程</a></p>
+<h1 id="ssh">SSH</h1>
+<p>生成SSH Key：</p>
+<pre><code>ssh-keygen -t rsa -C &quot;emailname@example.com&quot;
+</code></pre>
+<p>（id_rsa.pub文件）</p>
+<p>Git克隆及推送：<br>
+克隆：</p>
+<pre><code>git clone https://
+git clone git@
+</code></pre>
+<p>推送：</p>
+<pre><code>git add .
+git commit -m &quot;your-description&quot;
+git push
+</code></pre>
+<h1 id="gist托管">Gist托管</h1>
+<p><a href="https://10101.io/2018/09/29/Surge_0">利用 Gist 托管 Surge/Surfboard 节点和规则</a></p>
+<h1 id="hexo更新">Hexo更新</h1>
+<pre><code>hexo clean
+hexo g
+hexo d
+</code></pre>
+<h1 id="youtube-dl懒人脚本bat">youtube-dl懒人脚本.bat</h1>
+<pre><code>@echo off
+:start
+set /p dir=请输入保存路径：
+set dir=%dir:/=\%
+pushd %dir%
+if /i not %dir%==%cd% goto :start
+echo 保存路径：%cd%
+:download
+set /p input=请输入视频链接：
+set input=%input:&amp;=^^^&amp;%
+youtube-dl -F %input%
+if errorlevel 1 goto :download
+set /p code=请输入视频格式编号：
+youtube-dl -f %code% %input%
+goto :download
+</code></pre>
+<h1 id=""></h1>
+<!-- more -->
+<p>国外网盘下载<br>
+<a href="https://suufun.com/">速方云</a></p>
+
                 </div>
             </article>
         </div>
-        <br>
+
+        
+
+        
+            <span id="/post/bi-ji/" class="leancloud_visitors" data-flag-title="🏄‍笔记">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
         
 
         
@@ -124,7 +211,6 @@
 </script>
 
         
-
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first"></div>
