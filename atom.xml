@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://courir28.github.io</id>
     <title>a vapour trail</title>
-    <updated>2021-01-16T09:17:19.820Z</updated>
+    <updated>2021-01-16T09:18:13.846Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://courir28.github.io"/>
     <link rel="self" href="https://courir28.github.io/atom.xml"/>
@@ -345,12 +345,12 @@ goto :download
 <code>~*</code></p>
 </li>
 </ol>
-<p>#QX资源解析器<br>
-编辑QX配置文件，[general]部分加入：<br>
+<h1 id="qx资源解析器">QX资源解析器</h1>
+<p>编辑QX配置文件，[general]部分加入：<br>
 <code>resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js</code></p>
 <p>重写-引用时打开</p>
-<p>#JD脚本<br>
-<code>https://github.com/NobyDa/Script/tree/master/JD-DailyBonus</code></p>
+<h1 id="jd脚本">JD脚本</h1>
+<p><code>https://github.com/NobyDa/Script/tree/master/JD-DailyBonus</code></p>
 ]]></content>
     </entry>
 </feed>
